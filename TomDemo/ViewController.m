@@ -11,6 +11,10 @@
 
 @interface ViewController ()
 
+//UI
+@property(nonatomic, weak)IBOutlet UILabel *valueLabel;
+
+//Model
 @property(nonatomic, strong)VoiceListener *listener;
 
 - (void)initModelComponent;
@@ -35,6 +39,15 @@
 - (void)initModelComponent
 {
     self.listener = [[VoiceListener alloc] init];
+}
+
+#pragma mark - VoiceListenerDelegate
+
+- (void)voiceChanged:(VoiceListener *)listener voice:(CGFloat)voice
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _valueLabel.text = [NSString stringWithFormat:@"ld", (NSInteger)voice];
+    });
 }
 
 @end

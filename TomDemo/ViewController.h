@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VoiceListener.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<VoiceListenerDelegate>
 
 
 @end

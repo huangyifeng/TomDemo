@@ -66,6 +66,10 @@
                 [_recorder updateMeters];
                 CGFloat decibels = [BelUtil convertDecibelToPositive:[_recorder averagePowerForChannel:0]];
                 NSLog(@"current decibel is %f", decibels);
+                if([self.delegate respondsToSelector:@selector(voiceChanged:voice:)])
+                {
+                    [self.delegate voiceChanged:self voice:decibels];
+                }
 //                NSLog(@"current decibel is %f", decibels);
             } repeats:YES];
         });

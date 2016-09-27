@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class VoiceListener;
+
+@protocol VoiceListenerDelegate <NSObject>
+
+- (void)voiceChanged:(VoiceListener *)listener voice:(CGFloat)voice;
+
+@end
+
+
 @interface VoiceListener : NSObject
 
 @property(nonatomic, assign)CGFloat minDecibel;
+@property(nonatomic, weak)id<VoiceListenerDelegate> delegate;
 
 - (void)startListener:(void(^)())callback;
 

@@ -13,7 +13,7 @@
 + (CGFloat)convertDecibelToPositive:(CGFloat)nagetive
 {
     float   level;                // The linear 0.0 .. 1.0 value we need.
-    float   minDecibels = -120.0f; // Or use -60dB, which I measured in a silent room.
+    float   minDecibels = -80.0f; // Or use -60dB, which I measured in a silent room.
     
     if (nagetive < minDecibels)
     {
