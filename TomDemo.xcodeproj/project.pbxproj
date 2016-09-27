@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC66EF038BB322EB24306C7A /* libPods-TomDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFB7807AEEDA08963676156 /* libPods-TomDemo.a */; };
+		BBAA62971D9A690800D53124 /* BelUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAA62961D9A690800D53124 /* BelUtil.m */; };
 		C4A744011D997BC200BA1CA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A744001D997BC200BA1CA8 /* main.m */; };
 		C4A744041D997BC200BA1CA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A744031D997BC200BA1CA8 /* AppDelegate.m */; };
 		C4A744071D997BC200BA1CA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A744061D997BC200BA1CA8 /* ViewController.m */; };
@@ -22,6 +23,8 @@
 		1829FA1F060AA40D8AD01B1B /* Pods-TomDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TomDemo/Pods-TomDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5A69B9C2F85C16A43B6AAEDB /* Pods-TomDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TomDemo/Pods-TomDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9AFB7807AEEDA08963676156 /* libPods-TomDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TomDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBAA62951D9A690800D53124 /* BelUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BelUtil.h; sourceTree = "<group>"; };
+		BBAA62961D9A690800D53124 /* BelUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BelUtil.m; sourceTree = "<group>"; };
 		C4A743FC1D997BC100BA1CA8 /* TomDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A744001D997BC200BA1CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4A744021D997BC200BA1CA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBAA62941D9A68E100D53124 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BBAA62951D9A690800D53124 /* BelUtil.h */,
+				BBAA62961D9A690800D53124 /* BelUtil.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		C4A743F31D997BC100BA1CA8 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		C4A743FE1D997BC200BA1CA8 /* TomDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BBAA62941D9A68E100D53124 /* Util */,
 				C4A744161D997C3B00BA1CA8 /* Logic */,
 				C4A744021D997BC200BA1CA8 /* AppDelegate.h */,
 				C4A744031D997BC200BA1CA8 /* AppDelegate.m */,
@@ -242,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A744071D997BC200BA1CA8 /* ViewController.m in Sources */,
+				BBAA62971D9A690800D53124 /* BelUtil.m in Sources */,
 				C4A744041D997BC200BA1CA8 /* AppDelegate.m in Sources */,
 				C4A7441E1D997E3700BA1CA8 /* VoiceListener.m in Sources */,
 				C4A744011D997BC200BA1CA8 /* main.m in Sources */,
@@ -358,6 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TomDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyf.TomDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TomDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyf.TomDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

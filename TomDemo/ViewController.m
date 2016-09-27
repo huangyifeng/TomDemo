@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "VoiceListener.h"
 
 @interface ViewController ()
+
+@property(nonatomic, strong)VoiceListener *listener;
+
+- (void)initModelComponent;
 
 @end
 
@@ -16,12 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self initModelComponent];
+    
+    [_listener startListener:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initModelComponent
+{
+    self.listener = [[VoiceListener alloc] init];
 }
 
 @end

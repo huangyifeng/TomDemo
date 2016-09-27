@@ -8,6 +8,9 @@
 
 #import "VoiceListener.h"
 #import <AVFoundation/AVFoundation.h>
+#import <BlocksKit/BlocksKit.h>
+
+#import "BelUtil.h"
 
 @interface VoiceListener ()
 
@@ -54,18 +57,19 @@
     if(_recorder)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             [_recorder prepareToRecord];
             _recorder.meteringEnabled = YES;
             [_recorder record];
             
-            
-            
+            [NSTimer bk_scheduledTimerWithTimeInterval:0.1 block:^(NSTimer *timer) {
+                [_recorder updateMeters];
+                CGFloat decibels = [BelUtil convertDecibelToPositive:[_recorder averagePowerForChannel:0]];
+                NSLog(@"current decibel is %f", decibels);
+//                NSLog(@"current decibel is %f", decibels);
+            } repeats:YES];
         });
-        
-        
     }
-    
-    
 }
 
 @end

@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "512100DF6909876FFBBC6E1361E99FB77EBB0558",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "6369ef9f-ed7f-0410-948b-d9332a7d9350++6868" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6369ef9f-ed7f-0410-948b-d9332a7d9350++6868" : 0,
+    "512100DF6909876FFBBC6E1361E99FB77EBB0558" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BCE50F90-AABE-42D8-9F7B-CEC761422F15",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6369ef9f-ed7f-0410-948b-d9332a7d9350++6868" : "",
+    "512100DF6909876FFBBC6E1361E99FB77EBB0558" : "TomDemo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TomDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TomDemo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/huangyifeng\/TomDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "512100DF6909876FFBBC6E1361E99FB77EBB0558"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svn.dev.cybozu.co.jp\/svn\/gemini",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6369ef9f-ed7f-0410-948b-d9332a7d9350++6868"
+    }
+  ]
+}
