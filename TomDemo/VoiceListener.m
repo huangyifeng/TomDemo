@@ -42,7 +42,7 @@
     NSError *error = nil;
     NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
     NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [NSNumber numberWithFloat: 44100.0], AVSampleRateKey,
+                              [NSNumber numberWithFloat: 12000.0], AVSampleRateKey,
                               [NSNumber numberWithInt: kAudioFormatAppleLossless], AVFormatIDKey,
                               [NSNumber numberWithInt: 2], AVNumberOfChannelsKey,
                               [NSNumber numberWithInt: AVAudioQualityMax], AVEncoderAudioQualityKey,
@@ -52,7 +52,7 @@
 
 #pragma mark - public
 
-- (void)startListener:(void (^)())callback\
+- (void)startListener:(void (^)())callback
 {
     if(_recorder)
     {
