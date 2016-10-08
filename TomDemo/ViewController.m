@@ -62,7 +62,7 @@
     
     NSError *error = nil;
 //    NSURL *url = 
-    self.player = [[VoicePlayer alloc]initWithContentsOfURL:_recorder.url error:&error];
+//    self.player = [[VoicePlayer alloc]initWithContentsOfURL:_recorder.url error:&error];
     if (error)
     {
         NSLog(@"create player error occur: %@",error);
@@ -108,9 +108,9 @@
 {
     if (_currentState == RecorderStateListening)
     {
-        self.player = [[VoicePlayer alloc]initWithContentsOfURL:_recorder.url error:nil];
-        [_player prepareToPlay];
-        [_player play];
+//        self.player = [[VoicePlayer alloc]initWithContentsOfURL:_recorder.url error:nil];
+//        [_player prepareToPlay];
+//        [_player play];
         
 //        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSError *error = nil;
@@ -147,28 +147,31 @@
 //        [playerNode scheduleFile:audioFile atTime:nil completionHandler:nil];
 //        [playerNode play];
 //        });
+        
+        _player = [[VoicePlayer alloc] initWithURL:_recorder.url];
+        [_player play];
     }
 }
 
 #pragma mark - VoiceListenerDelegate
 
-- (void)voiceChanged:(VoiceListener *)listener voice:(CGFloat)voice
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        _valueLabel.text = [NSString stringWithFormat:@"%ld", (long)voice];
-    });
-    if (40 < voice && !(_recorder.isRecording || _player.isPlaying))
-    {
-        [_recorder record];
-        _valueLabel.textColor = [UIColor greenColor];
-    }
-    else if(voice < 40 && (_recorder.isRecording || _player.isPlaying))
-    {
-        [_recorder stop];
-        [_player prepareToPlay];
-        [_player play];
-        _valueLabel.textColor = [UIColor redColor];
-    }
-}
+//- (void)voiceChanged:(VoiceListener *)listener voice:(CGFloat)voice
+//{
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        _valueLabel.text = [NSString stringWithFormat:@"%ld", (long)voice];
+//    });
+//    if (40 < voice && !(_recorder.isRecording || _player.isPlaying))
+//    {
+//        [_recorder record];
+//        _valueLabel.textColor = [UIColor greenColor];
+//    }
+//    else if(voice < 40 && (_recorder.isRecording || _player.isPlaying))
+//    {
+//        [_recorder stop];
+//        [_player prepareToPlay];
+//        [_player play];
+//        _valueLabel.textColor = [UIColor redColor];
+//    }
+//}
 
 @end

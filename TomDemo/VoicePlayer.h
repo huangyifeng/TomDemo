@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface VoicePlayer : AVAudioPlayer
+@interface VoicePlayer : NSObject
+
+- (instancetype)initWithURL:(NSURL *)url;
+@property(nonatomic, strong, readonly)NSURL *url;
+
+- (void)play;
+- (void)stop;
 
 @end
