@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -16,20 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-vR-tcH">
-                                <rect key="frame" x="248" y="140" width="104" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-vR-tcH">
+                                <rect key="frame" x="232" y="140" width="136" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#state" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6c-x8-naD">
+                                <rect key="frame" x="258" y="252" width="84" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLF-g3-zHi">
+                                <rect key="frame" x="257" y="338" width="87" height="30"/>
+                                <state key="normal" title="Start Record"/>
+                                <connections>
+                                    <action selector="startRecordButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubG-kh-VqL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mh1-W1-OKe">
+                                <rect key="frame" x="259" y="388" width="82" height="30"/>
+                                <state key="normal" title="Play Record"/>
+                                <connections>
+                                    <action selector="playRecordButtonHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2F-0r-2iV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bZl-vR-tcH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="D5D-Kr-tGo"/>
+                            <constraint firstItem="U6c-x8-naD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dw9-W7-crn"/>
+                            <constraint firstItem="U6c-x8-naD" firstAttribute="top" secondItem="bZl-vR-tcH" secondAttribute="bottom" constant="60" id="GKA-tS-xmz"/>
+                            <constraint firstItem="KLF-g3-zHi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hao-81-O1z"/>
+                            <constraint firstItem="KLF-g3-zHi" firstAttribute="top" secondItem="U6c-x8-naD" secondAttribute="bottom" constant="50" id="Vty-pI-Ogv"/>
+                            <constraint firstItem="Mh1-W1-OKe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nak-ti-mdm"/>
                             <constraint firstItem="bZl-vR-tcH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sdI-Ek-JmH"/>
+                            <constraint firstItem="Mh1-W1-OKe" firstAttribute="top" secondItem="KLF-g3-zHi" secondAttribute="bottom" constant="20" id="vgd-Ad-zbx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playStopButton" destination="KLF-g3-zHi" id="Rb0-49-HKa"/>
+                        <outlet property="stateLabel" destination="U6c-x8-naD" id="Le8-xm-gBc"/>
                         <outlet property="valueLabel" destination="bZl-vR-tcH" id="Lhj-YY-QLG"/>
                     </connections>
                 </viewController>

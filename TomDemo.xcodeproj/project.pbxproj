@@ -19,6 +19,17 @@
 		C4A7440F1D997BC200BA1CA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4A7440D1D997BC200BA1CA8 /* LaunchScreen.storyboard */; };
 		C4A7441B1D997CA900BA1CA8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4A7441A1D997CA900BA1CA8 /* AVFoundation.framework */; };
 		C4A7441E1D997E3700BA1CA8 /* VoiceListener.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A7441D1D997E3700BA1CA8 /* VoiceListener.m */; };
+		C4E714331DA3BE4900D20851 /* AAFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E7141C1DA3BE4900D20851 /* AAFilter.cpp */; };
+		C4E714341DA3BE4900D20851 /* BPMDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E7141E1DA3BE4900D20851 /* BPMDetect.cpp */; };
+		C4E714351DA3BE4900D20851 /* cpu_detect_x86.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E714211DA3BE4900D20851 /* cpu_detect_x86.cpp */; };
+		C4E714361DA3BE4900D20851 /* FIFOSampleBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E714221DA3BE4900D20851 /* FIFOSampleBuffer.cpp */; };
+		C4E714371DA3BE4900D20851 /* FIRFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E714251DA3BE4900D20851 /* FIRFilter.cpp */; };
+		C4E714381DA3BE4900D20851 /* mmx_optimized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E714271DA3BE4900D20851 /* mmx_optimized.cpp */; };
+		C4E714391DA3BE4900D20851 /* PeakFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E714281DA3BE4900D20851 /* PeakFinder.cpp */; };
+		C4E7143A1DA3BE4900D20851 /* RateTransposer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E7142A1DA3BE4900D20851 /* RateTransposer.cpp */; };
+		C4E7143B1DA3BE4900D20851 /* SoundTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E7142C1DA3BE4900D20851 /* SoundTouch.cpp */; };
+		C4E7143C1DA3BE4900D20851 /* sse_optimized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E7142F1DA3BE4900D20851 /* sse_optimized.cpp */; };
+		C4E7143D1DA3BE4900D20851 /* TDStretch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4E714311DA3BE4900D20851 /* TDStretch.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +42,7 @@
 		BBCD26801D9CEE6700C974C9 /* VoiceRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceRecorder.m; sourceTree = "<group>"; };
 		BBCD26821D9D0CC500C974C9 /* VoicePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoicePlayer.h; sourceTree = "<group>"; };
 		BBCD26831D9D0CC500C974C9 /* VoicePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoicePlayer.m; sourceTree = "<group>"; };
+		C40DD63B1DA0E35B009CD52C /* RecorderState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecorderState.h; sourceTree = "<group>"; };
 		C4A743FC1D997BC100BA1CA8 /* TomDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A744001D997BC200BA1CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4A744021D997BC200BA1CA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,6 +56,30 @@
 		C4A7441A1D997CA900BA1CA8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C4A7441C1D997E3700BA1CA8 /* VoiceListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceListener.h; sourceTree = "<group>"; };
 		C4A7441D1D997E3700BA1CA8 /* VoiceListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceListener.m; sourceTree = "<group>"; };
+		C4E7141C1DA3BE4900D20851 /* AAFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAFilter.cpp; sourceTree = "<group>"; };
+		C4E7141D1DA3BE4900D20851 /* AAFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAFilter.h; sourceTree = "<group>"; };
+		C4E7141E1DA3BE4900D20851 /* BPMDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BPMDetect.cpp; sourceTree = "<group>"; };
+		C4E7141F1DA3BE4900D20851 /* BPMDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMDetect.h; sourceTree = "<group>"; };
+		C4E714201DA3BE4900D20851 /* cpu_detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_detect.h; sourceTree = "<group>"; };
+		C4E714211DA3BE4900D20851 /* cpu_detect_x86.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu_detect_x86.cpp; sourceTree = "<group>"; };
+		C4E714221DA3BE4900D20851 /* FIFOSampleBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIFOSampleBuffer.cpp; sourceTree = "<group>"; };
+		C4E714231DA3BE4900D20851 /* FIFOSampleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFOSampleBuffer.h; sourceTree = "<group>"; };
+		C4E714241DA3BE4900D20851 /* FIFOSamplePipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFOSamplePipe.h; sourceTree = "<group>"; };
+		C4E714251DA3BE4900D20851 /* FIRFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIRFilter.cpp; sourceTree = "<group>"; };
+		C4E714261DA3BE4900D20851 /* FIRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIRFilter.h; sourceTree = "<group>"; };
+		C4E714271DA3BE4900D20851 /* mmx_optimized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mmx_optimized.cpp; sourceTree = "<group>"; };
+		C4E714281DA3BE4900D20851 /* PeakFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeakFinder.cpp; sourceTree = "<group>"; };
+		C4E714291DA3BE4900D20851 /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
+		C4E7142A1DA3BE4900D20851 /* RateTransposer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RateTransposer.cpp; sourceTree = "<group>"; };
+		C4E7142B1DA3BE4900D20851 /* RateTransposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateTransposer.h; sourceTree = "<group>"; };
+		C4E7142C1DA3BE4900D20851 /* SoundTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTouch.cpp; sourceTree = "<group>"; };
+		C4E7142D1DA3BE4900D20851 /* SoundTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTouch.h; sourceTree = "<group>"; };
+		C4E7142E1DA3BE4900D20851 /* soundtouch_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundtouch_config.h; sourceTree = "<group>"; };
+		C4E7142F1DA3BE4900D20851 /* sse_optimized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sse_optimized.cpp; sourceTree = "<group>"; };
+		C4E714301DA3BE4900D20851 /* STTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTypes.h; sourceTree = "<group>"; };
+		C4E714311DA3BE4900D20851 /* TDStretch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TDStretch.cpp; sourceTree = "<group>"; };
+		C4E714321DA3BE4900D20851 /* TDStretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDStretch.h; sourceTree = "<group>"; };
+		C4E7143E1DA3BFBA00D20851 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +107,7 @@
 		C4A743F31D997BC100BA1CA8 = {
 			isa = PBXGroup;
 			children = (
-				C4A7441A1D997CA900BA1CA8 /* AVFoundation.framework */,
+				C4E7141B1DA3BE4900D20851 /* SoundTouch */,
 				C4A743FE1D997BC200BA1CA8 /* TomDemo */,
 				C4A743FD1D997BC100BA1CA8 /* Products */,
 				C4E760050C960DEF3512E3AE /* Pods */,
@@ -116,6 +152,7 @@
 		C4A744161D997C3B00BA1CA8 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				C40DD63B1DA0E35B009CD52C /* RecorderState.h */,
 				C4A7441C1D997E3700BA1CA8 /* VoiceListener.h */,
 				C4A7441D1D997E3700BA1CA8 /* VoiceListener.m */,
 				BBCD267F1D9CEE6700C974C9 /* VoiceRecorder.h */,
@@ -124,6 +161,36 @@
 				BBCD26831D9D0CC500C974C9 /* VoicePlayer.m */,
 			);
 			name = Logic;
+			sourceTree = "<group>";
+		};
+		C4E7141B1DA3BE4900D20851 /* SoundTouch */ = {
+			isa = PBXGroup;
+			children = (
+				C4E7141C1DA3BE4900D20851 /* AAFilter.cpp */,
+				C4E7141D1DA3BE4900D20851 /* AAFilter.h */,
+				C4E7141E1DA3BE4900D20851 /* BPMDetect.cpp */,
+				C4E7141F1DA3BE4900D20851 /* BPMDetect.h */,
+				C4E714201DA3BE4900D20851 /* cpu_detect.h */,
+				C4E714211DA3BE4900D20851 /* cpu_detect_x86.cpp */,
+				C4E714221DA3BE4900D20851 /* FIFOSampleBuffer.cpp */,
+				C4E714231DA3BE4900D20851 /* FIFOSampleBuffer.h */,
+				C4E714241DA3BE4900D20851 /* FIFOSamplePipe.h */,
+				C4E714251DA3BE4900D20851 /* FIRFilter.cpp */,
+				C4E714261DA3BE4900D20851 /* FIRFilter.h */,
+				C4E714271DA3BE4900D20851 /* mmx_optimized.cpp */,
+				C4E714281DA3BE4900D20851 /* PeakFinder.cpp */,
+				C4E714291DA3BE4900D20851 /* PeakFinder.h */,
+				C4E7142A1DA3BE4900D20851 /* RateTransposer.cpp */,
+				C4E7142B1DA3BE4900D20851 /* RateTransposer.h */,
+				C4E7142C1DA3BE4900D20851 /* SoundTouch.cpp */,
+				C4E7142D1DA3BE4900D20851 /* SoundTouch.h */,
+				C4E7142E1DA3BE4900D20851 /* soundtouch_config.h */,
+				C4E7142F1DA3BE4900D20851 /* sse_optimized.cpp */,
+				C4E714301DA3BE4900D20851 /* STTypes.h */,
+				C4E714311DA3BE4900D20851 /* TDStretch.cpp */,
+				C4E714321DA3BE4900D20851 /* TDStretch.h */,
+			);
+			path = SoundTouch;
 			sourceTree = "<group>";
 		};
 		C4E760050C960DEF3512E3AE /* Pods */ = {
@@ -138,6 +205,8 @@
 		ED8A351D946FA951B440F4C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4E7143E1DA3BFBA00D20851 /* AudioToolbox.framework */,
+				C4A7441A1D997CA900BA1CA8 /* AVFoundation.framework */,
 				9AFB7807AEEDA08963676156 /* libPods-TomDemo.a */,
 			);
 			name = Frameworks;
@@ -265,11 +334,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E714391DA3BE4900D20851 /* PeakFinder.cpp in Sources */,
+				C4E7143C1DA3BE4900D20851 /* sse_optimized.cpp in Sources */,
 				BBCD26841D9D0CC500C974C9 /* VoicePlayer.m in Sources */,
 				BBCD26811D9CEE6700C974C9 /* VoiceRecorder.m in Sources */,
+				C4E714361DA3BE4900D20851 /* FIFOSampleBuffer.cpp in Sources */,
+				C4E7143D1DA3BE4900D20851 /* TDStretch.cpp in Sources */,
 				C4A744071D997BC200BA1CA8 /* ViewController.m in Sources */,
+				C4E714381DA3BE4900D20851 /* mmx_optimized.cpp in Sources */,
+				C4E714341DA3BE4900D20851 /* BPMDetect.cpp in Sources */,
 				BBAA62971D9A690800D53124 /* BelUtil.m in Sources */,
 				C4A744041D997BC200BA1CA8 /* AppDelegate.m in Sources */,
+				C4E714351DA3BE4900D20851 /* cpu_detect_x86.cpp in Sources */,
+				C4E7143A1DA3BE4900D20851 /* RateTransposer.cpp in Sources */,
+				C4E7143B1DA3BE4900D20851 /* SoundTouch.cpp in Sources */,
+				C4E714331DA3BE4900D20851 /* AAFilter.cpp in Sources */,
+				C4E714371DA3BE4900D20851 /* FIRFilter.cpp in Sources */,
 				C4A7441E1D997E3700BA1CA8 /* VoiceListener.m in Sources */,
 				C4A744011D997BC200BA1CA8 /* main.m in Sources */,
 			);
@@ -385,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				INFOPLIST_FILE = TomDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -399,6 +480,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				INFOPLIST_FILE = TomDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

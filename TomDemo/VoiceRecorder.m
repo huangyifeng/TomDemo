@@ -11,7 +11,8 @@
 
 @interface VoiceRecorder ()
 
-@property(nonatomic, strong)AVAudioRecorder *recorder;
+//@property(nonatomic, strong)AVAudioRecorder *recorder;
+@property(nonatomic, strong)AVAudioEngine *engine;
 
 - (void)initModelComponent;
 
@@ -37,46 +38,69 @@
     
     NSError *error = nil;
     NSString *tempDir = NSTemporaryDirectory();
-    NSURL *url = [NSURL fileURLWithPath:[tempDir stringByAppendingPathComponent:@"recordFile"]];
-    NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [NSNumber numberWithFloat: 12000.0], AVSampleRateKey,
-                              [NSNumber numberWithInt: kAudioFormatAppleLossless], AVFormatIDKey,
-                              [NSNumber numberWithInt: 2], AVNumberOfChannelsKey,
-                              [NSNumber numberWithInt: AVAudioQualityMax], AVEncoderAudioQualityKey,
-                              nil];
-    self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+    NSURL *url = [NSURL fileURLWithPath:[tempDir stringByAppendingPathComponent:@"recordFile1"]];
+
+    // =============================
+//    NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+//                              [NSNumber numberWithFloat: 12000.0], AVSampleRateKey,
+//                              [NSNumber numberWithInt: kAudioFormatAppleLossless], AVFormatIDKey,
+//                              [NSNumber numberWithInt: 2], AVNumberOfChannelsKey,
+//                              [NSNumber numberWithInt: AVAudioQualityMax], AVEncoderAudioQualityKey,
+//                              nil];
+//    self.recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+//    if (error)
+//    {
+//        NSLog(@"create record error: %@", error);
+//    }
+    // =============================
+
+    self.engine = [[AVAudioEngine alloc] init];
+    
+    AVAudioInputNode *inputNode = [_engine inputNode];
+    AVAudioUnitTimePitch *pitchEffect = [[AVAudioUnitTimePitch alloc] init];
+    pitchEffect.pitch = 1600;
+    [_engine attachNode:pitchEffect];
+    
+    [_engine connect:_engine.inputNode to:pitchEffect format:[_engine.inputNode inputFormatForBus:0]];
+    [pitchEffect installTapOnBus:0
+                      bufferSize:8192
+                          format:[pitchEffect outputFormatForBus:0]
+                           block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
+                               
+                           }];
 }
 
 #pragma mark - public
 
 - (void)record
 {
-    if (self.recorder)
-    {
-        [_recorder prepareToRecord];
-        
-        [_recorder record];
-    }
+    
+    
+    
+
 }
 
 - (void)stop
 {
-    if (self.recorder)
-    {
-        [_recorder stop];
-    }
+//    if (self.recorder)
+//    {
+//        [_recorder stop];
+//    }
+    
+    [_engine stop];
+    [_engine reset];
 }
 
 #pragma mark - Getter & Setter
 
 - (BOOL)isRecording
 {
-    return _recorder.isRecording;
+//    return _recorder.isRecording;
 }
 
 - (NSURL *)url
 {
-    return _recorder.url;
+//    return _recorder.url;
 }
 
 @end

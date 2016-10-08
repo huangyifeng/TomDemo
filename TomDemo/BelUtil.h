@@ -12,5 +12,6 @@
 @interface BelUtil : NSObject
 
 + (CGFloat)convertDecibelToPositive:(CGFloat)nagetive;
+//+ (NSData *)changeVoice:(NSData *)originalVoice;
 
 @end
