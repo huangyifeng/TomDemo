@@ -13,6 +13,7 @@
 
 //@property(nonatomic, strong)AVAudioRecorder *recorder;
 @property(nonatomic, strong)AVAudioEngine *engine;
+@property(nonatomic, strong)NSURL *fileURL;
 
 - (void)initModelComponent;
 
@@ -39,6 +40,7 @@
     NSError *error = nil;
     NSString *tempDir = NSTemporaryDirectory();
     NSURL *url = [NSURL fileURLWithPath:[tempDir stringByAppendingPathComponent:@"recordFile1"]];
+    self.fileURL = url;
 
     // =============================
 //    NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -57,15 +59,21 @@
     self.engine = [[AVAudioEngine alloc] init];
     
     AVAudioInputNode *inputNode = [_engine inputNode];
-    AVAudioUnitTimePitch *pitchEffect = [[AVAudioUnitTimePitch alloc] init];
-    pitchEffect.pitch = 1600;
-    [_engine attachNode:pitchEffect];
+//    AVAudioUnitTimePitch *pitchEffect = [[AVAudioUnitTimePitch alloc] init];
+    AVAudioMixerNode *mixerNode = [_engine mainMixerNode];
+    AVAudioFile *fileForWriting = [[AVAudioFile alloc] initForWriting:_fileURL settings:nil error:&error];
     
-    [_engine connect:_engine.inputNode to:pitchEffect format:[_engine.inputNode inputFormatForBus:0]];
-    [pitchEffect installTapOnBus:0
+//    pitchEffect.pitch = 1600;
+//    [_engine attachNode:pitchEffect];
+    
+    [_engine connect:inputNode to:mixerNode format:[inputNode outputFormatForBus:0]];
+//    [_engine connect:pitchEffect to:mixerNode format:[inputNode outputFormatForBus:0]];
+    [inputNode installTapOnBus:0
                       bufferSize:8192
-                          format:[pitchEffect outputFormatForBus:0]
+                          format:[inputNode outputFormatForBus:0]
                            block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
+                               NSLog(@"Tap recieve Buffer : %@ \n when: %@", buffer, when);
+//                               [fileForWriting writeFromBuffer:<#(nonnull const AVAudioPCMBuffer *)#> error:<#(NSError * _Nullable __autoreleasing * _Nullable)#>]
                                
                            }];
 }
@@ -74,10 +82,11 @@
 
 - (void)record
 {
-    
-    
-    
-
+    NSError *error = nil;
+    if (![_engine startAndReturnError:&error])
+    {
+        NSLog(@"******** start engine error : %@", error);
+    }
 }
 
 - (void)stop
@@ -96,11 +105,13 @@
 - (BOOL)isRecording
 {
 //    return _recorder.isRecording;
+    return _engine.isRunning;
 }
 
 - (NSURL *)url
 {
 //    return _recorder.url;
+    return _fileURL;
 }
 
 @end
