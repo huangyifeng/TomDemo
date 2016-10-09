@@ -63,7 +63,7 @@
     NSError *error = nil;
 //    NSURL *url = 
 //    self.player = [[VoicePlayer alloc]initWithContentsOfURL:_recorder.url error:&error];
-    NSAssert(error, @"create player error occur: %@",error);
+    NSAssert(!error, @"create player error occur: %@",[error localizedDescription]);
 }
 
 - (void)initViewComponent

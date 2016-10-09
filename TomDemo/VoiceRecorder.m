@@ -14,6 +14,7 @@
 //@property(nonatomic, strong)AVAudioRecorder *recorder;
 @property(nonatomic, strong)AVAudioEngine *engine;
 @property(nonatomic, strong)NSURL *fileURL;
+@property(nonatomic, strong)AVAudioFile *fileForWriting;
 
 - (void)initModelComponent;
 
@@ -61,7 +62,6 @@
     
 //    pitchEffect.pitch = 1600;
 //    [_engine attachNode:pitchEffect];
-    AVAudioFile *fileForWriting = [[AVAudioFile alloc] initForWriting:_fileURL settings:nil error:&error];
     
 //    [_engine connect:inputNode to:mixerNode format:[inputNode outputFormatForBus:0]];
 //    [_engine connect:pitchEffect to:mixerNode format:[inputNode outputFormatForBus:0]];
@@ -71,7 +71,7 @@
                            block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
                                NSLog(@"Tap recieve Buffer : %@ \n when: %@", buffer, when);
                                NSError *error = nil;
-                               [fileForWriting writeFromBuffer:buffer error:&error];
+                               [_fileForWriting writeFromBuffer:buffer error:&error];
                            }];
 }
 
@@ -84,6 +84,12 @@
     {
         NSLog(@"******** start engine error : %@", error);
     }
+    else
+    {
+        NSLog(@"begin to create file for writing");
+        self.fileForWriting = [[AVAudioFile alloc] initForWriting:_fileURL settings:nil error:&error];
+        NSAssert(!error, @"cannot create file for writing, error: %@", [error localizedDescription]);
+    }
 }
 
 - (void)stop
@@ -92,9 +98,10 @@
 //    {
 //        [_recorder stop];
 //    }
-    
     [_engine stop];
     [_engine reset];
+//    [_fileForWriting remove]
+    self.fileForWriting = nil;
 }
 
 #pragma mark - Getter & Setter

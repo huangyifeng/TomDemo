@@ -36,7 +36,7 @@
     self.playerNode = [[AVAudioPlayerNode alloc] init];
     
     AVAudioUnitTimePitch *pitchEffect = [[AVAudioUnitTimePitch alloc] init];
-    pitchEffect.pitch = 100;
+    pitchEffect.pitch = 400;
 
     [_audioEngine attachNode:_playerNode];
     [_audioEngine attachNode:pitchEffect];
