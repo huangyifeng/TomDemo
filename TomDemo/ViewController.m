@@ -38,7 +38,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
+
     [self initModelComponent];
     [self initViewComponent];
 //    [_listener startListener:nil];
@@ -52,7 +53,6 @@
 
 - (void)initModelComponent
 {
-    
     _currentState = RecorderStateListening;
 
     self.listener = [[VoiceListener alloc] init];
@@ -63,10 +63,7 @@
     NSError *error = nil;
 //    NSURL *url = 
 //    self.player = [[VoicePlayer alloc]initWithContentsOfURL:_recorder.url error:&error];
-    if (error)
-    {
-        NSLog(@"create player error occur: %@",error);
-    }
+    NSAssert(error, @"create player error occur: %@",error);
 }
 
 - (void)initViewComponent

@@ -36,7 +36,7 @@
     self.playerNode = [[AVAudioPlayerNode alloc] init];
     
     AVAudioUnitTimePitch *pitchEffect = [[AVAudioUnitTimePitch alloc] init];
-    pitchEffect.pitch = 1600;
+    pitchEffect.pitch = 100;
 
     [_audioEngine attachNode:_playerNode];
     [_audioEngine attachNode:pitchEffect];
@@ -52,6 +52,7 @@
     {
         NSError *error = nil;
         AVAudioFile *audioFile = [[AVAudioFile alloc] initForReading:_url error:&error];
+        NSAssert(audioFile, @"can not create audio file:error: %@", [error localizedDescription]);
         [_playerNode scheduleFile:audioFile atTime:nil completionHandler:nil];
         [_playerNode play];
     }

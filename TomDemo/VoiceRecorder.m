@@ -34,9 +34,6 @@
 
 - (void)initModelComponent
 {
-    
-    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayAndRecord error: nil];
-    
     NSError *error = nil;
     NSString *tempDir = NSTemporaryDirectory();
     NSURL *url = [NSURL fileURLWithPath:[tempDir stringByAppendingPathComponent:@"recordFile1"]];
